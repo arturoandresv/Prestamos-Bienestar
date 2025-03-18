@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitudes de Préstamo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <header>
+            <h1>SPUM</h1>
+            <nav>
+                <ul>
+                    <li>Inicio</li>
+                    <li>Cerrar Sesión</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <h2>Lista de solicitudes pendientes</h2>
+            <ul class="loan-list">
+                <li class="loan-item" onclick="showOptions(this)">
+                    <span class="name">Juan Pérez</span>
+                    <span class="code">UC123456</span>
+                    <span class="item">Juego Uno</span>
+                    <div class="options">
+                        <button class="approve">Aprobar</button>
+                        <button class="reject">Rechazar</button>
+                    </div>
+                </li>
+                <li class="loan-item" onclick="showOptions(this)">
+                    <span class="name">María Gómez</span>
+                    <span class="code">UC654321</span>
+                    <span class="item">Ajedrez</span>
+                    <div class="options">
+                        <button class="approve">Aprobar</button>
+                        <button class="reject">Rechazar</button>
+                    </div>
+                </li>
+                <li class="loan-item" onclick="showOptions(this)">
+                    <span class="name">Carlos Rodríguez</span>
+                    <span class="code">UC789123</span>
+                    <span class="item">Dominó</span>
+                    <div class="options">
+                        <button class="approve">Aprobar</button>
+                        <button class="reject">Rechazar</button>
+                    </div>
+                </li>
+                <li class="loan-item" onclick="showOptions(this)">
+                    <span class="name">Ana López</span>
+                    <span class="code">UC456789</span>
+                    <span class="item">Parqué</span>
+                    <div class="options">
+                        <button class="approve">Aprobar</button>
+                        <button class="reject">Rechazar</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    <script>
+        function showOptions(element) {
+            let options = element.querySelector('.options');
+            options.style.display = options.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>

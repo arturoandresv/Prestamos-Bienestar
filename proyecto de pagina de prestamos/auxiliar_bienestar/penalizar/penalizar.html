@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar y Penalizar Usuario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Penalizaciones</h1>
+    </header>
+    <div class="container">
+        <h2>Buscar Usuario</h2>
+        <input type="text" id="searchUser" placeholder="Ingrese código universitario">
+        <button onclick="searchUser()">Buscar</button>
+        
+        <div id="userResult" class="user-info" style="display: none;">
+            <p><strong>Nombre:</strong> <span id="userName">-</span></p>
+            <p><strong>Código:</strong> <span id="userCode">-</span></p>
+            <button class="reject" onclick="penalizeUser()">Penalizar</button>
+        </div>
+    </div>
+
+    <script>
+        function searchUser() {
+            const input = document.getElementById("searchUser").value.trim();
+            const userDatabase = {
+                "UC123456": "Juan Pérez",
+                "UC654321": "María Gómez",
+                "UC789123": "Carlos Rodríguez",
+                "UC456789": "Ana López"
+            };
+            
+            if (userDatabase[input]) {
+                document.getElementById("userName").textContent = userDatabase[input];
+                document.getElementById("userCode").textContent = input;
+                document.getElementById("userResult").style.display = "block";
+            } else {
+                alert("Usuario no encontrado");
+            }
+        }
+
+        function penalizeUser() {
+            alert("Usuario penalizado exitosamente");
+        }
+    </script>
+</body>
+</html>

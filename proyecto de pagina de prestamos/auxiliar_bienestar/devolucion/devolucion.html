@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Devolución</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Registrar Devolución</h1>
+    </header>
+    
+    <div class="container">
+       <div class="container-action">
+        <h2>Devolver un Artículo</h2>
+        <input type="text" id="returnUser" placeholder="Ingrese código universitario">
+        <input type="text" id="returnItem" placeholder="Ingrese el artículo devuelto">
+        <button onclick="registerReturn()">Registrar Devolución</button>
+        
+       </div>
+       <div class="container-action">
+        <h2>Generar Informe</h2>
+        <button onclick="generateReport()">Generar Informe</button>
+        <ul id="returnHistory"></ul>
+       </div>
+    </div>
+
+    <script>
+        let returnRecords = [];
+
+        function registerReturn() {
+            const userCode = document.getElementById("returnUser").value.trim();
+            const item = document.getElementById("returnItem").value.trim();
+            
+            if (userCode === "" || item === "") {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+            
+            const record = {
+                user: userCode,
+                item: item,
+                date: new Date().toLocaleString()
+            };
+            returnRecords.push(record);
+            updateReturnHistory();
+            alert("Devolución registrada exitosamente.");
+        }
+
+        function updateReturnHistory() {
+            const historyList = document.getElementById("returnHistory");
+            historyList.innerHTML = "";
+            returnRecords.forEach(record => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `Usuario: ${record.user}, Artículo: ${record.item}, Fecha: ${record.date}`;
+                historyList.appendChild(listItem);
+            });
+        }
+
+        function generateReport() {
+            if (returnRecords.length === 0) {
+                alert("No hay devoluciones registradas.");
+                return;
+            }
+            
+            let reportContent = "Generar Informe\n";
+            returnRecords.forEach(record => {
+                reportContent += `Usuario: ${record.user}, Artículo: ${record.item}, Fecha: ${record.date}\n`;
+            });
+            
+            const blob = new Blob([reportContent], { type: "text/plain" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "reporte_devoluciones.txt";
+            link.click();
+        }
+    </script>
+</body>
+</html>
