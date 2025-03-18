@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Préstamos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .prestamos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .prestamo-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .prestamo-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mis Préstamos</h1>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="juegos.html">Juegos Disponibles</a></li>
+                <li><a href="mis-prestamos.html">Mis Préstamos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="prestamos">
+        <h2>Lista de Préstamos</h2>
+        <div class="prestamos-container">
+            <div class="prestamo-card">
+                <h3>Catan</h3>
+                <p><strong>Fecha de Préstamo:</strong> 12/03/2024</p>
+                <p><strong>Fecha de Devolución:</strong> 19/03/2024</p>
+            </div>
+            <div class="prestamo-card">
+                <h3>Monopoly</h3>
+                <p><strong>Fecha de Préstamo:</strong> 15/03/2024</p>
+                <p><strong>Fecha de Devolución:</strong> 22/03/2024</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Universidad del Magdalena - Préstamo de Juegos de Mesa</p>
+        <p><a href="politica-privacidad.html">Política de Privacidad</a> | <a href="terminos-uso.html">Términos de Uso</a></p>
+    </footer>
+</body>
+</html>
