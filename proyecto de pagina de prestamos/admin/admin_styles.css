@@ -1,0 +1,217 @@
+/* Variables CSS */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e67e22;
+    --success-color: #27ae60;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --text-light: #ffffff;
+    --shadow-light: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.search-button {
+    padding: 8px 12px;
+    margin-left: 8px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-button:hover {
+    background-color: #2980b9;
+}
+
+.monopoly-img {
+    display: block;
+    margin: 0 auto 20px auto; /* Centra la imagen y añade un margen inferior */
+    width: 350px; /* Ajusta el tamaño según tus necesidades */
+}
+
+.hero {
+    text-align: center;
+}
+
+/* Estilos Generales */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado */
+header {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    background: var(--accent-color);
+    color: var(--text-light);
+}
+
+/* Panel de administración */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: var(--shadow-light);
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.admin-sidebar ul li a {
+    display: block;
+    padding: 10px;
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.admin-sidebar ul li a:hover {
+    background: var(--accent-color);
+}
+
+.admin-content {
+    margin-left: 250px;
+    padding: 40px;
+    flex: 1;
+}
+
+/* Tablas en Admin */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--background-color);
+}
+
+.admin-table th {
+    background: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.admin-table tr:hover {
+    background: var(--background-color);
+}
+
+/* Botones en Admin */
+.admin-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.admin-btn.edit {
+    background: var(--secondary-color);
+}
+
+.admin-btn.delete {
+    background: var(--accent-color);
+}
+
+.admin-btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+    .admin-sidebar {
+        width: 100%;
+        position: relative;
+    }
+    .admin-content {
+        margin-left: 0;
+    }
+}

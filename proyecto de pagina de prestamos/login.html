@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Préstamo de Juegos - Universidad</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function validarLogin(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+            var usuario = document.getElementById("username").value;
+            var contrasena = document.getElementById("password").value;
+            
+            if (usuario === "admin" && contrasena === "admin") {
+                window.location.href = "/admin/admin_dashboard.html";
+            } else {
+                window.location.href = "inicio.html";
+            }   
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -13,10 +26,13 @@
     
     <section class="ventana-login">
         <div class = "login-container">
+            
             <h1>Bienvenido</h1>
-            <input type="text" placeholder="Correo">
-            <input type="password" placeholder="Contraseña">
-            <a href="inicio.html">Iniciar sesión</a>
+        <form onsubmit="validarLogin(event)">
+            <input type="text" placeholder="Correo" id="username">
+            <input type="password" placeholder="Contraseña" id="password">
+            <button type="submit" class="login-btn">Ingresar</button>
+        </form>
         </div>
         <div class="volver">
             <a href="index.html">volver</a>
